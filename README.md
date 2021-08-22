@@ -7,7 +7,16 @@ Gamepad Bluetooth
 - HC-05
 
 # Como funciona
-O Arduino Nano (ou qualquer outro) é ligado a um HC-05. Cada entrada digital do Arduino manda um char pela porta serial para o HC-05, que envia o sinal para o outro HC-05, que está conectado no Arduino Pro Micro. Ele interpreta esses dados seriais e manda o comando correspondente do Gamepad para o computador.
-* serial 38400
+Controle (master):
+-Arduino Nano (escolhi esse por ser pequeno e barato) se comunica com um HC-05 em modo master. 
+-Botões são ligados nas entradas do Arduino. Cada um, ao ser pressionado, manda um caractere pelo TX do Arduino para o RX do HC-05.
+-O HC-05 transmite esse sinal via bluetooth.
+
+Dongle (slave):
+-HC-05 em modo slave capta o sinal bluetooth e os transmite via pino TX.
+-Arduino Pro Micro (escolhido por conta da compatibilidade HID) lê o sinal TX do HC-05 pelo pino RX.
+-Cada caractere recebido via serial é convertido para um comando da biblioteca "Gamepad.h".
+
+Ambos HC-05 foram configurados com Serial a 38400.
 
 ![](images/geral.JPG)
