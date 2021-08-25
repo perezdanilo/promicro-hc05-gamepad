@@ -8,7 +8,7 @@ Gamepad Bluetooth
 
 # Como funciona
 Controle (master):
-- Arduino Nano (escolhi esse por ser pequeno e barato) se comunica com um HC-05 em modo master. 
+- Arduino comunica-se com um HC-05 em modo master. 
 - Botões são ligados nas entradas do Arduino. Cada um, ao ser pressionado, manda um caractere pelo TX do Arduino para o RX do HC-05.
 - O HC-05 transmite esse sinal via bluetooth.
 
