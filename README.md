@@ -2,7 +2,6 @@
 Gamepad Bluetooth
 
 # Materiais
-- Arduino Nano
 - Arduino Pro Micro
 - HC-05
 
